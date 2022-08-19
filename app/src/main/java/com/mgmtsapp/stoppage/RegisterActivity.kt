@@ -104,6 +104,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onRestart() {
         super.onRestart()
         binding.regSigninBtn.setTextColor(Color.parseColor("#9A62CC"))
