@@ -46,7 +46,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
             if (email.isNotEmpty()){
                 if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    binding.progressBar.visibility = View.VISIBLE
+                    binding.forpBar.visibility = View.VISIBLE
                     firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener{
                         if(it.isSuccessful)
                         {
@@ -67,6 +67,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        binding.forpBar.visibility=View.INVISIBLE
     }
 
 
