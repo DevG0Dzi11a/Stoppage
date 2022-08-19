@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -20,6 +21,7 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
+
 
 
         //For full screen
@@ -47,34 +49,41 @@ class SignInActivity : AppCompatActivity() {
 
 
         binding.signinBtn.setOnClickListener {
+
             val signEmail = binding.signinEmailText.text.toString().trim()
             val signPass = binding.signinPassText.text.toString().trim()
             if (signEmail.isNotEmpty() && signPass.isNotEmpty()) {
                 //if email and pass is provided
-                firebaseAuth.signInWithEmailAndPassword(signEmail, signPass)
-                    .addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
-                            Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT)
-                                .show()
-                            finish()
-                        } else {
-                            Toast.makeText(this, "Wrong Credentials", Toast.LENGTH_SHORT).show()
+                if(Patterns.EMAIL_ADDRESS.matcher(signEmail).matches()) {
+                    binding.signpBar.visibility=View.VISIBLE
+                    firebaseAuth.signInWithEmailAndPassword(signEmail, signPass)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+                                Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT)
+                                    .show()
+                                binding.signpBar.visibility=View.INVISIBLE
+                                finish()
+                            } else {
+
+                                binding.signpBar.visibility=View.INVISIBLE
+                                Toast.makeText(this, "Wrong Credentials", Toast.LENGTH_SHORT).show()
+                            }
                         }
-                    }
+                }else{
+                    binding.signinEmailText.error = "Invalid E-mail"
+                }
             } else {
                 //If any field is empty
                 if (signEmail.isEmpty() && signPass.isEmpty()) {
-                    Toast.makeText(
-                        this,
-                        "Please provide the email and password",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    binding.signinEmailText.error = "Empty field"
+                    binding.signinPassText.error = "Empty field"
+                    binding.signinEmailText.requestFocus()
                 } else if (signPass.isEmpty()) {
-                    Toast.makeText(this, "Empty password", Toast.LENGTH_SHORT).show()
-                    binding.signinPassText.requestFocus()
+                    binding.signinPassText.error = "Empty field"
+                    binding.signinEmailText.requestFocus()
                 } else if(signEmail.isEmpty()) {
-                    Toast.makeText(this, "Empty E-mail address", Toast.LENGTH_SHORT).show()
+                    binding.signinEmailText.error = "Empty field"
                     binding.signinEmailText.requestFocus()
 
                 }
@@ -86,6 +95,8 @@ class SignInActivity : AppCompatActivity() {
         super.onRestart()
         binding.signinRegBtn.setTextColor(Color.parseColor("#9A62CC"))
         binding.forgetPassBtn.setTextColor(Color.RED)
+        binding.signpBar.visibility=View.INVISIBLE
+
     }
 
     private fun setWindowFlag(bits: Int, on: Boolean) {
