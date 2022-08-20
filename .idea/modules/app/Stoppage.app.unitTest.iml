@@ -18,11 +18,13 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1e650d6b0eb60bf47bd8f1b5aef1d186/transformed/viewbinding-7.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0378eb5d710892f17d9b7d629f1faad1/transformed/material-1.6.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3570302ae7b0ee40c68fca5e778b83e9/transformed/appcompat-1.5.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/b490d2ae3e8418540f25a6b53df3dfc0/transformed/firebase-auth-ktx-21.0.7-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b9a7f3206793d6e998cd114d5a80f55b/transformed/firebase-auth-21.0.7-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0d5808271bcee9136bcb6843e3d35dfa/transformed/viewpager2-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/aee265e591cb557f806e32acdd160f25/transformed/play-services-auth-api-phone-17.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a53eabc052ab27fd98a6a6981d680d29/transformed/play-services-safetynet-17.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0c5b178e5d1d2ec665ed13eb88861b84/transformed/firebase-auth-interop-20.0.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/99358b64d30e54f998b1c45064171684/transformed/firebase-common-ktx-20.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3130fead00e94d6d9757b7120c335a0b/transformed/firebase-common-20.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d1f2f4475f602882e1fab3817fe03d9d/transformed/play-services-base-17.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/2eb65a5334dedecf6fb3754d080149eb/transformed/play-services-tasks-18.0.1-api.jar</arg>
@@ -188,6 +190,8 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-interop:20.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common:20.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-ktx:21.0.7@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common-ktx:20.0.0@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Stoppage.app.main" />
 </module>
