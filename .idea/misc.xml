@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Android Studio/Stoppage/app/src/main/res/drawable/round_shape.xml" value="0.2225" />
         <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/activity_forgot_password.xml" value="0.14901315789473685" />
+        <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/activity_home.xml" value="0.176" />
         <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
+        <entry key="..\:/Android Studio/Stoppage/app/src/main/res/layout/app_bar.xml" value="0.15723684210526315" />
         <entry key="..\:/Github/AndroidAppDevelopment(kotlin)/Stoppage/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
       </map>
     </option>
