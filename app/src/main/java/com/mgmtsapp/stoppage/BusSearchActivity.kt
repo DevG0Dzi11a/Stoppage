@@ -7,48 +7,40 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.view.isEmpty
+import com.mgmtsapp.stoppage.databinding.ActivityBusSearchBinding
+import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
 
 class BusSearchActivity : AppCompatActivity() {
-    //lateinit var spin : Spinner
-    //lateinit var locaton : TextView
 
+    private lateinit var  binding: ActivityBusSearchBinding
+    val locations: Array<String> = arrayOf("Tibbot","Banani","Dhaka Cantonment","Farmgate","Gulshan","Ecb Chattar","Rampura","Sahabag","Airport","Mohakhali","Dhanmondi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bus_search)
+        binding=ActivityBusSearchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        /*spin = findViewById(R.id.spinner) as Spinner
-        locaton = findViewById(R.id.textView) as TextView
+        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,locations)
+        binding.spinner.adapter= arrayAdapter
+        binding.spinner.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
 
-       val options = arrayOf("1.Dhaka Cantonment", "2.Tibbot")
-       spin.adapter=ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
-        spin.onItemClickListener = object : AdapterView.OnItemSelectedListener,
-            AdapterView.OnItemClickListener {
-
-           override fun onItemSelected(
-               parent: AdapterView<*>?,
-               view: View?,
-               position: Int,
-               id: Long
-           ) {
-                    locaton.text=options.get(position)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
-                locaton.text="Please select a option"
             }
 
-            override fun onItemClick(
-               parent: AdapterView<*>?,
-              view: View?,
-              position: Int,
-                id: Long
-            ) {
-            }
 
-        }*/
-
-
+        }
     }
 
+
+
 }
+
