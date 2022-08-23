@@ -38,7 +38,7 @@
         android:id="@+id/signin_emailText"
         android:layout_width="360sp"
         android:layout_height="50sp"
-        android:layout_marginTop="80sp"
+        android:layout_marginTop="40sp"
         android:layout_gravity="center"
         android:hint=" E-mail"
         android:backgroundTint="#DBCBEF"
@@ -123,6 +123,27 @@
         android:textSize="14sp"
         android:textColor="#FD0000"
         android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="40sp">
+
+      <ImageView
+          android:id="@+id/googleSign"
+          android:layout_width="0sp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          app:srcCompat="@drawable/googlelg" />
+
+      <ImageView
+          android:id="@+id/facebookSign"
+          android:layout_width="0sp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          app:srcCompat="@drawable/facebooklg" />
+    </LinearLayout>
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
