@@ -132,7 +132,7 @@
                 android:layout_marginTop="40sp"
                 android:text="Already registered?"
                 android:fontFamily="@font/ftltlt"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textColor="#9A62CC"
                 android:gravity="center"/>
             <TextView
@@ -142,10 +142,9 @@
                 android:layout_marginTop="40sp"
                 android:text=" Sign in"
                 android:fontFamily="@font/coopbl"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textColor="#9A62CC"
                 android:gravity="center"/>
         </LinearLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

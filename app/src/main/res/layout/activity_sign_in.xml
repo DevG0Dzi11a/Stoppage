@@ -85,7 +85,7 @@
         android:background="@drawable/round_shape"
         android:backgroundTint="#9A62CC"
         android:layout_gravity="center"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="20sp"
         />
 
     <LinearLayout
@@ -99,7 +99,7 @@
         android:layout_marginTop="40sp"
         android:text="Haven't registered yet?"
         android:fontFamily="@font/ftltlt"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="#9A62CC"
         android:gravity="center"/>
       <TextView
@@ -109,7 +109,7 @@
           android:layout_marginTop="40sp"
           android:text=" REGISTER NOW"
           android:fontFamily="@font/coopbl"
-          android:textSize="14sp"
+          android:textSize="18sp"
           android:textColor="#9A62CC"
           android:gravity="center"/>
     </LinearLayout>
@@ -117,12 +117,19 @@
         android:id="@+id/forgetPass_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="18sp"
         android:text="Forgot Password?"
         android:fontFamily="@font/coopbl"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textColor="#FD0000"
         android:gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:fontFamily="@font/ftltlt"
+        android:hint="      ---------------Sign in using---------------"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -137,12 +144,7 @@
           android:layout_weight="1"
           app:srcCompat="@drawable/googlelg" />
 
-      <ImageView
-          android:id="@+id/facebookSign"
-          android:layout_width="0sp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          app:srcCompat="@drawable/facebooklg" />
+
     </LinearLayout>
 
   </LinearLayout>
