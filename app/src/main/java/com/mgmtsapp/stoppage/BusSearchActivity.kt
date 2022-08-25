@@ -22,6 +22,8 @@ class BusSearchActivity : AppCompatActivity() {
 
         val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,locations)
         binding.spinner.adapter= arrayAdapter
+        binding.spinner1.adapter= arrayAdapter
+
         binding.spinner.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -38,6 +40,28 @@ class BusSearchActivity : AppCompatActivity() {
 
 
         }
+        binding.spinner1.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+
+        }
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        binding.spinner.adapter=null
     }
 
 
