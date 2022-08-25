@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "709539023030",
-    "project_id": "stoppage-app",
-    "storage_bucket": "stoppage-app.appspot.com"
+    "project_number": "1068484491341",
+    "firebase_url": "https://stoppage-202001041-default-rtdb.firebaseio.com",
+    "project_id": "stoppage-202001041",
+    "storage_bucket": "stoppage-202001041.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:709539023030:android:787d8a163e99236427be17",
+        "mobilesdk_app_id": "1:1068484491341:android:5f2382a94bd228b6874404",
         "android_client_info": {
           "package_name": "com.mgmtsapp.stoppage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "709539023030-fe2spku3lptjiue9dmg9aacer3u3ss6j.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mgmtsapp.stoppage",
-            "certificate_hash": "7f1a7eb14922d3cb778e2a417c69049d10ae140a"
-          }
-        },
-        {
-          "client_id": "709539023030-q59gp2ntoeee4lihqhm5bvo0q1l2tqfc.apps.googleusercontent.com",
+          "client_id": "1068484491341-jv6soi836ovo8jpoo0bn02c9i12tf2i1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC_YhMdmkxiOup3EvJJI8nDZdN0L3OsxhA"
+          "current_key": "AIzaSyBQ1nD8U8jWD9ABZNh3w_7FnxYW_FtualQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "709539023030-q59gp2ntoeee4lihqhm5bvo0q1l2tqfc.apps.googleusercontent.com",
+              "client_id": "1068484491341-jv6soi836ovo8jpoo0bn02c9i12tf2i1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

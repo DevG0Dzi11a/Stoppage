@@ -14,10 +14,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".NavigationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BusSearchActivity"
+            android:name=".DrawerBaseActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
