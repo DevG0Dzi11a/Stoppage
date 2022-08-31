@@ -34,12 +34,27 @@
                 android:textColor="#FFFFFF"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <FrameLayout
         android:id="@+id/activityContainer"
         android:layout_width="match_parent"
         android:layout_height="0sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        android:background="@drawable/uni_bg"/>
+        android:background="@drawable/uni_bg">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/busSearchBtn"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="#9A62CC"
+            android:fontFamily="@font/coopbl"
+            android:text="Search"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

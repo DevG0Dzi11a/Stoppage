@@ -1,5 +1,6 @@
 package com.mgmtsapp.stoppage
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +49,9 @@ class HomeActivity : AppCompatActivity(){
         }
         binding.contents.navBtn.setOnClickListener{
             drawerLayout.open()
+        }
+        binding.contents.busSearchBtn.setOnClickListener{
+            startActivity(Intent(this, BusSearchActivity::class.java))
         }
 
         // to make the Navigation drawer icon always appear on the action bar
