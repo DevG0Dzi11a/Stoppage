@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             window.statusBarColor = Color.TRANSPARENT
         }
-        supportActionBar?.hide()
         if(firebaseAuth.currentUser != null)
         {
             //saving the current user state
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             //if User is not logged in
             Handler().postDelayed({
-                val intent = Intent(this@MainActivity, SignInActivity::class.java)
+                val intent = Intent(this@MainActivity, SignInAsActivity::class.java)
                 startActivity(intent)
                 finish()
             }, 1500)

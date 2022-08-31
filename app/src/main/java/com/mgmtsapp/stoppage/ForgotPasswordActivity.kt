@@ -23,14 +23,13 @@ class ForgotPasswordActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
 
-
-
         //For full screen
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
         }
         if (Build.VERSION.SDK_INT >= 19) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
         if (Build.VERSION.SDK_INT >= 21) {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
@@ -39,29 +38,40 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
 
 
-        binding.resetBtn.setOnClickListener{
+        binding.resetBtn.setOnClickListener {
             val email = binding.forPassEmail.text.toString().trim()
 
 
 
-            if (email.isNotEmpty()){
-                if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            if (email.isNotEmpty()) {
+                if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     binding.forpBar.visibility = View.VISIBLE
-                    firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener{
-                        if(it.isSuccessful)
-                        {
-                            startActivity(Intent(this@ForgotPasswordActivity, SignInActivity::class.java))
-                            Toast.makeText(this@ForgotPasswordActivity, "Please check your e-mail", Toast.LENGTH_SHORT)
-                        }
-                        else{
-                            Toast.makeText(this@ForgotPasswordActivity, "An error occurred! Please try again", Toast.LENGTH_SHORT)
+                    firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            startActivity(
+                                Intent(
+                                    this@ForgotPasswordActivity,
+                                    SignInActivity::class.java
+                                )
+                            )
+                            Toast.makeText(
+                                this@ForgotPasswordActivity,
+                                "Please check your e-mail",
+                                Toast.LENGTH_SHORT
+                            )
+                        } else {
+                            Toast.makeText(
+                                this@ForgotPasswordActivity,
+                                "An error occurred! Please try again",
+                                Toast.LENGTH_SHORT
+                            )
                         }
                     }
-                }else{
+                } else {
                     binding.forPassEmail.setError("Invalid E-mail address")
                     binding.forPassEmail.requestFocus()
                 }
-            }else{
+            } else {
                 binding.forPassEmail.setError("E-mail is required")
                 binding.forPassEmail.requestFocus()
             }
@@ -71,7 +81,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
-        binding.forpBar.visibility=View.INVISIBLE
+        binding.forpBar.visibility = View.INVISIBLE
     }
 
 
