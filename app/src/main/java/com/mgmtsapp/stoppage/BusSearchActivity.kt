@@ -58,6 +58,9 @@ class BusSearchActivity : AppCompatActivity() {
             } else
                 startActivity(Intent(this, EticketingActivity::class.java))
         }
+        binding.busBackBtn.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locations)
         binding.spinner.adapter = arrayAdapter
 
