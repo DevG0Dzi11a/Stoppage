@@ -53,6 +53,9 @@ class HomeActivity : AppCompatActivity(){
         binding.contents.busSearchBtn.setOnClickListener{
             startActivity(Intent(this, BusSearchActivity::class.java))
         }
+        binding.contents.trackBtn.setOnClickListener{
+            startActivity(Intent(this, BusSearchActivity::class.java))
+        }
 
         // to make the Navigation drawer icon always appear on the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
