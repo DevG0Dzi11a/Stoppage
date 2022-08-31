@@ -1,9 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/uni_bg"
     tools:context=".EticketingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="380sp"
+        android:layout_height="200sp"
+        android:background="@drawable/ticket_back"
+        android:layout_marginTop="100sp"
+        android:layout_marginLeft="15sp">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="15sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/coopbl"
+            android:text="Bijoy Express"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="15sp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:text="9 a.m" />
+
+        <Button
+            android:id="@+id/eBuyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280sp"
+            android:layout_marginTop="125sp"
+            android:fontFamily="@font/coopbl"
+            android:textColor="@color/white"
+            android:background="@color/teal_700"
+            android:text="Buy Ticket" />
+
+        <Button
+            android:id="@+id/eSeatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150sp"
+            android:layout_marginTop="125sp"
+            android:fontFamily="@font/coopbl"
+            android:textColor="@color/white"
+            android:background="@color/teal_700"
+            android:text="Seats" />
+
+        <Button
+            android:id="@+id/eLocaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="125sp"
+            android:fontFamily="@font/coopbl"
+            android:textColor="@color/white"
+            android:background="@color/teal_700"
+            android:text="Locations" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250sp"
+            android:layout_marginTop="65sp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textSize="18sp"
+            android:text="Price:" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="65sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/coopbl"
+            android:text="65 TK"
+            android:textColor="#E30000"
+            android:textSize="24sp" />
+
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
