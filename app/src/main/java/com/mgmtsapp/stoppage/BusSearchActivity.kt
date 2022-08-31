@@ -19,6 +19,7 @@ class BusSearchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBusSearchBinding
     val locations: Array<String> = arrayOf(
+        "",
         "Tibbot",
         "Banani",
         "Dhaka Cantonment",
@@ -95,13 +96,9 @@ class BusSearchActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        if (!binding.spinner.id.equals(0)) {
-            binding.spinner.id=0
-
-        }
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish();
     }
 
     private fun setWindowFlag(bits: Int, on: Boolean) {
