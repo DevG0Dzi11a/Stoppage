@@ -31,6 +31,20 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
 
+        val message = intent.getStringExtra("EXTRA_MESSAGE")
+
+        if(message == "Passenger"){
+            binding.googleSign.visibility = View.VISIBLE
+            binding.havensText.visibility = View.VISIBLE
+            binding.signinRegBtn.visibility = View.VISIBLE
+            binding.signinusingText.visibility = View.VISIBLE
+        }else{
+            binding.googleSign.visibility = View.INVISIBLE
+            binding.havensText.visibility = View.INVISIBLE
+            binding.signinRegBtn.visibility = View.INVISIBLE
+            binding.signinusingText.visibility = View.INVISIBLE
+        }
+
         //google sign in
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken("1068484491341-jv6soi836ovo8jpoo0bn02c9i12tf2i1.apps.googleusercontent.com")
@@ -122,8 +136,13 @@ class SignInActivity : AppCompatActivity() {
         binding.signinRegBtn.setTextColor(Color.parseColor("#9A62CC"))
         binding.forgetPassBtn.setTextColor(Color.RED)
         binding.signpBar.visibility = View.INVISIBLE
+        binding.googleSign.visibility = View.INVISIBLE
+        binding.havensText.visibility = View.INVISIBLE
+        binding.signinRegBtn.visibility = View.INVISIBLE
+        binding.signinusingText.visibility = View.INVISIBLE
 
     }
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)

@@ -13,20 +13,33 @@
       android:id="@+id/textView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="100dp"
       android:fontFamily="@font/coopbl"
-      android:layout_marginTop="120sp"
       android:gravity="center"
-      android:text="Sign in"
+      android:text="Hey there!"
       android:textColor="@color/white"
       android:textSize="45sp"
-      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="MissingConstraints" />
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="10dp"
+      android:fontFamily="@font/lbrited"
+      android:text="Welcome back to Stoppage"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView"
       tools:ignore="MissingConstraints" />
 
   <LinearLayout
       android:layout_width="409dp"
-      android:layout_height="500dp"
+      android:layout_height="550dp"
       android:layout_marginTop="80sp"
       android:orientation="vertical"
       app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -37,8 +50,8 @@
     <EditText
         android:id="@+id/signin_emailText"
         android:layout_width="360sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="40sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="50sp"
         android:layout_gravity="center"
         android:hint=" E-mail"
         android:backgroundTint="#DBCBEF"
@@ -54,7 +67,7 @@
     <EditText
         android:id="@+id/signin_passText"
         android:layout_width="360sp"
-        android:layout_height="50sp"
+        android:layout_height="60sp"
         android:layout_marginTop="20sp"
         android:layout_gravity="center"
         android:background="@drawable/round_shape"
@@ -94,6 +107,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
     <TextView
+        android:id="@+id/havensText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40sp"
@@ -124,6 +138,7 @@
         android:textColor="#FD0000"
         android:gravity="center"/>
     <TextView
+        android:id="@+id/signinusingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
