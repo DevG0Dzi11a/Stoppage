@@ -73,8 +73,7 @@
                 android:layout_marginTop="20sp"
                 android:layout_marginEnd="7sp"
                 android:layout_marginBottom="7sp"
-                android:background="@drawable/round_shape"
-                android:backgroundTint="#DBCBEF"
+
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:spinnerMode="dropdown"
@@ -120,7 +119,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/signin_btn"
+                android:id="@+id/searchBtn"
                 android:layout_width="200sp"
                 android:layout_height="50sp"
                 android:layout_gravity="center"

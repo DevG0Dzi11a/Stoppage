@@ -1,5 +1,6 @@
 package com.mgmtsapp.stoppage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,18 +14,19 @@ import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
 
 class BusSearchActivity : AppCompatActivity() {
 
-    private lateinit var  binding: ActivityBusSearchBinding
-    val locations: Array<String> = arrayOf("Tibbot","Banani","Dhaka Cantonment","Farmgate","Gulshan","Ecb Chattar","Rampura","Sahabag","Airport","Mohakhali","Dhanmondi")
+    private  lateinit var binding: ActivityBusSearchBinding
+    val locations = arrayOf("Tibbot", "Farmage","Cantonment")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityBusSearchBinding.inflate(layoutInflater)
+        binding = ActivityBusSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,locations)
-        binding.spinner.adapter= arrayAdapter
-        binding.spinner1.adapter= arrayAdapter
-
-        binding.spinner.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
+        binding.searchBtn.setOnClickListener{
+            startActivity(Intent(this,EticketingActivity::class.java))
+        }
+        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, locations)
+        binding.spinner.adapter = arrayAdapter
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -38,33 +40,14 @@ class BusSearchActivity : AppCompatActivity() {
 
             }
 
-
         }
-        binding.spinner1.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-
-        }
-
     }
-
-    override fun onRestart() {
-        super.onRestart()
-        binding.spinner.adapter=null
-    }
-
-
-
 }
+
+
+
+
+
+
+
 

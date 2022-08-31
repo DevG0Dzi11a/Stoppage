@@ -1,5 +1,6 @@
 package com.mgmtsapp.stoppage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
@@ -9,8 +10,10 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        supportActionBar?.show()
         setContentView(binding.root)
+        binding.ticketingBtn.setOnClickListener{
+           startActivity(Intent(this@HomeActivity,BusSearchActivity::class.java))
+        }
 
     }
 }
