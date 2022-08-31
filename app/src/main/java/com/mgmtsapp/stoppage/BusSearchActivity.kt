@@ -1,8 +1,12 @@
 package com.mgmtsapp.stoppage
 
+import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -13,16 +17,67 @@ import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
 
 class BusSearchActivity : AppCompatActivity() {
 
-    private lateinit var  binding: ActivityBusSearchBinding
-    val locations: Array<String> = arrayOf("Tibbot","Banani","Dhaka Cantonment","Farmgate","Gulshan","Ecb Chattar","Rampura","Sahabag","Airport","Mohakhali","Dhanmondi")
+    private lateinit var binding: ActivityBusSearchBinding
+    val locations: Array<String> = arrayOf(
+        "Tibbot",
+        "Banani",
+        "Dhaka Cantonment",
+        "Farmgate",
+        "Gulshan",
+        "Ecb Chattar",
+        "Rampura",
+        "Sahabag",
+        "Airport",
+        "Mohakhali",
+        "Dhanmondi"
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityBusSearchBinding.inflate(layoutInflater)
+        binding = ActivityBusSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,locations)
-        binding.spinner.adapter= arrayAdapter
-        binding.spinner.onItemSelectedListener= object : AdapterView.OnItemSelectedListener{
+        //For full screen
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
+            window.statusBarColor = Color.TRANSPARENT
+        }
+
+        binding.searchBtn.setOnClickListener {
+            if (binding.editTextTime.text.isEmpty()) {
+                binding.editTextTime.setError("Empty field")
+
+            } else
+                startActivity(Intent(this, EticketingActivity::class.java))
+        }
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locations)
+        binding.spinner.adapter = arrayAdapter
+
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+
+        }
+        binding.spinner1.adapter = arrayAdapter
+        binding.spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -40,6 +95,26 @@ class BusSearchActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        if (!binding.spinner.id.equals(0)) {
+            binding.spinner.id=0
+
+        }
+
+    }
+
+    private fun setWindowFlag(bits: Int, on: Boolean) {
+        //For full screen
+        val win = window
+        val winParams = win.attributes
+        if (on) {
+            winParams.flags = winParams.flags or bits
+        } else {
+            winParams.flags = winParams.flags and bits.inv()
+        }
+        win.attributes = winParams
+    }
 
 
 }

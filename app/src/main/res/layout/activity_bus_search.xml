@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+
     tools:context=".BusSearchActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@drawable/uni_bg">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/busToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:background="@color/purple_500"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white">
+                <Button
+                    android:id="@+id/busBackBtn"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:layout_marginTop="50sp"
+                    android:background="@drawable/ic_back"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:padding="10sp"
+                    android:text="Stoppage"
+                    android:fontFamily="@font/lbritedi"
+                    android:textSize="30sp"
+                    android:textColor="#FFFFFF"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
 
 
         <LinearLayout
@@ -36,6 +66,7 @@
                 android:layout_marginLeft="15sp"
                 android:layout_marginTop="10sp"
                 android:fontFamily="@font/coopbl"
+                android:textColor="#217E0C"
                 android:text="Search"
                 android:textSize="35sp" />
 
@@ -44,10 +75,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15sp"
-
+                android:textColor="#27AE17"
                 android:fontFamily="@font/coopbl"
                 android:text="your desired bus here..."
                 android:textSize="20sp" />
+
 
 
             <Spinner
@@ -85,9 +117,11 @@
                 android:layout_width="150sp"
                 android:layout_height="35sp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="25sp"
                 android:background="@color/purple_200"
                 android:ems="10"
+                android:textColor="#EADCDC"
+                android:hint="Time: 8:00/14:00"
                 android:inputType="time" />
 
 
@@ -106,6 +140,5 @@
 
 
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
