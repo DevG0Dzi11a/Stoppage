@@ -60,7 +60,7 @@
             <ImageView
                 android:layout_width="80sp"
                 android:layout_height="80sp"
-                android:layout_marginLeft="120sp"
+                android:layout_gravity="center"
                 android:layout_marginTop="20sp"
                 android:background="@drawable/icon_app"></ImageView>
 
