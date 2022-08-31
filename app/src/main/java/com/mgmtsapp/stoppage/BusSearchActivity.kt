@@ -15,13 +15,13 @@ import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
 class BusSearchActivity : AppCompatActivity() {
 
     private  lateinit var binding: ActivityBusSearchBinding
-    val locations = arrayOf("Tibbot", "Farmage","Cantonment")
+    //val locations = arrayOf("Tibbot", "Farmage","Cantonment")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBusSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.searchBtn.setOnClickListener{
+       /* binding.searchBtn.setOnClickListener{
             startActivity(Intent(this,EticketingActivity::class.java))
         }
         val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, locations)
@@ -40,7 +40,7 @@ class BusSearchActivity : AppCompatActivity() {
 
             }
 
-        }
+        }*/
     }
 }
 
