@@ -55,6 +55,17 @@ class BusSearchActivity : AppCompatActivity() {
             if (binding.editTextTime.text.isEmpty()) {
                 binding.editTextTime.setError("Empty field")
 
+            } else if (binding.editTextTime.text.toString()
+                    .toInt() > 2324 || binding.editTextTime.text.toString().toInt() < 0
+            ) {
+                binding.editTextTime.setError("Wrong input")
+            } else if (binding.editTextTimeM.text.isEmpty()) {
+                binding.editTextTimeM.setError("Empty field")
+            } else if (binding.editTextTimeM.text.toString()
+                    .toInt() > 59 || binding.editTextTimeM.text.toString().toInt() < 0
+            ) {
+                binding.editTextTimeM.setError("Wrong input")
+
             } else
                 startActivity(Intent(this, EticketingActivity::class.java))
         }

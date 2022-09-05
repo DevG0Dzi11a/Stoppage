@@ -137,18 +137,54 @@
                 android:textAlignment="center" />
 
 
-            <EditText
-                android:id="@+id/editTextTime"
-                android:layout_width="150sp"
-                android:layout_height="35sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25sp"
-                android:background="@drawable/round_shape"
-                android:backgroundTint="#DBCBEF"
-                android:ems="10"
-                android:hint="   Time: 8:00/14:00"
-                android:inputType="time"
-                android:textColor="#FFFFFF" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="28sp"
+                    android:fontFamily="@font/coopbl"
+                    android:text="Time:"
+                    android:textColor="#217E0C"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/editTextTime"
+                    android:layout_width="80sp"
+                    android:layout_height="35sp"
+                    android:layout_marginLeft="100sp"
+                    android:layout_marginTop="25sp"
+                    android:background="@drawable/round_shape"
+                    android:backgroundTint="#DBCBEF"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="hrs"
+                    android:inputType="time"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/editTextTimeM"
+                    android:layout_width="80sp"
+                    android:layout_height="35sp"
+                    android:layout_marginLeft="200sp"
+                    android:layout_marginTop="25sp"
+                    android:background="@drawable/round_shape"
+                    android:backgroundTint="#DBCBEF"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="mnt"
+                    android:inputType="time"
+                    android:textColor="#FFFFFF" />
+
+            </RelativeLayout>
+
+
+
 
 
             <androidx.appcompat.widget.AppCompatButton
