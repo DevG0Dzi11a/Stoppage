@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicketConfirmActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/uni_bg"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/busToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:background="@color/purple_500"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white">
+
+                <Button
+                    android:id="@+id/busBackBtn"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:layout_marginTop="50sp"
+                    android:background="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:fontFamily="@font/lbritedi"
+                    android:padding="10sp"
+                    android:text="Stoppage"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="350sp"
+            android:layout_height="350sp"
+           android:layout_gravity="center"
+            android:layout_marginTop="150sp"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/white">
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coopbl"
+                android:textSize="30sp"
+                android:textColor="#11A100"
+                android:layout_marginTop="60sp"
+                android:layout_marginLeft="35sp"
+                android:text="Congratulations!!!" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -22,6 +22,9 @@ class EticketingActivity :AppCompatActivity() {
         binding.eBackBtn.setOnClickListener {
             startActivity(Intent(this, BusSearchActivity::class.java))
         }
+        binding.eBuyButton.setOnClickListener{
+            startActivity(Intent(this,TicketConfirmActivity::class.java ))
+        }
 
 
     }
