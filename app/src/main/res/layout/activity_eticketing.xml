@@ -72,6 +72,7 @@
                     android:layout_marginTop="20sp"
                     android:layout_weight="1"
                     android:fontFamily="@font/coopbl"
+                    android:textColor="@color/teal_700"
                     android:text="Bijoy Express"
                     android:textSize="24sp" />
 
@@ -127,7 +128,7 @@
                     android:layout_marginTop="30sp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
-                    android:text="9.00 a.m"
+                    android:text="9.00"
                     android:textSize="15sp" />
 
                 <TextView
