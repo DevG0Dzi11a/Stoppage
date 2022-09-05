@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.core.view.isEmpty
 import com.mgmtsapp.stoppage.databinding.ActivityBusSearchBinding
 import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
@@ -66,7 +63,8 @@ class BusSearchActivity : AppCompatActivity() {
             ) {
                 binding.editTextTimeM.setError("Wrong input")
 
-            } else
+            }else
+
                 startActivity(Intent(this, EticketingActivity::class.java))
         }
         binding.busBackBtn.setOnClickListener {
