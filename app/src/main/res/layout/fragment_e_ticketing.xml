@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ETicketingFragment"
+    android:id="@+id/bus_search_frameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bus_search_constLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/uni_bg">
+
+        <LinearLayout
+            android:id="@+id/bus_search_linLayout"
+            android:layout_width="380dp"
+            android:layout_height="600sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/shadow_bus_search"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/icon_app"></ImageView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:layout_marginTop="20sp"
+                android:fontFamily="@font/coopbl"
+                android:text="Search"
+                android:textColor="#217E0C"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:fontFamily="@font/coopbl"
+                android:text="your desired bus here..."
+                android:textColor="#F10E0E"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:layout_marginTop="40sp"
+                android:fontFamily="@font/coopbl"
+                android:text="From:"
+                android:textColor="#217E0C"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginStart="7sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="7sp"
+                android:layout_marginBottom="7sp"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="#DBCBEF"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:layout_marginTop="20sp"
+                android:fontFamily="@font/coopbl"
+                android:text="To:"
+                android:textColor="#F10E0E"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="7sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="7sp"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="#DBCBEF"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="150sp"
+                android:layout_height="35sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="#DBCBEF"
+                android:ems="10"
+                android:hint="   Time: 8:00/14:00"
+                android:inputType="time"
+                android:textColor="#FFFFFF" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_btn"
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="35sp"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="#9A62CC"
+                android:fontFamily="@font/coopbl"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

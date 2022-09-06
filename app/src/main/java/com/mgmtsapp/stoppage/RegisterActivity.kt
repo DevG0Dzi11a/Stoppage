@@ -9,6 +9,10 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.mgmtsapp.stoppage.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -45,6 +49,7 @@ class RegisterActivity : AppCompatActivity() {
             val regPass = binding.regPassText.text.toString().trim()
             val regConPass = binding.regConPassText.text.toString().trim()
             val regPhone = binding.regPhone.text.toString().trim()
+            val regName = binding.regNameText.text.toString()
             binding.regpBar.visibility = View.VISIBLE
 
             if (regEmail.isNotEmpty() && regPass.isNotEmpty() && regConPass.isNotEmpty() && regPhone.length == 14) {
@@ -53,6 +58,9 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnCompleteListener {
                             binding.regpBar.visibility = View.INVISIBLE
                             if (it.isSuccessful) {
+                                var database =
+                                    FirebaseDatabase.getInstance().getReference("Passenger")
+                                database.push().setValue(Passengers(regEmail, regName, regPhone))
                                 Toast.makeText(
                                     this@RegisterActivity,
                                     "Registered",
@@ -62,7 +70,9 @@ class RegisterActivity : AppCompatActivity() {
                                     Intent(
                                         this@RegisterActivity,
                                         SignInActivity::class.java
-                                    )
+                                    ).also {
+                                        it.putExtra("EXTRA_MESSAGE", "Passenger")
+                                    }
                                 )
                                 binding.regpBar.visibility = View.INVISIBLE
                                 finish()

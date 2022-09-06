@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mgmtsapp.stoppage.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_trackingFragment2"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.mgmtsapp.stoppage.TrackingFragment"
+        android:label="fragment_tracking"
+        tools:layout="@layout/fragment_tracking" >
+        <action
+            android:id="@+id/action_trackingFragment_to_ETicketingFragment2"
+            app:destination="@id/ETicketingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ETicketingFragment"
+        android:name="com.mgmtsapp.stoppage.ETicketingFragment"
+        android:label="fragment_e_ticketing"
+        tools:layout="@layout/fragment_e_ticketing" />
+</navigation>

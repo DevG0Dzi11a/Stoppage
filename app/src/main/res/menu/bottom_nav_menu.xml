@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/trackingFragment"
+        android:icon="@drawable/ic_loc"
+        android:title="Locate" />
+    <item
+        android:id="@+id/ETicketingFragment"
+        android:icon="@drawable/ic_ticket"
+        android:title="E-Ticketing" />
+
+</menu>

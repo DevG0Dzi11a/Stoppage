@@ -1,21 +1,30 @@
 package com.mgmtsapp.stoppage
 
+import android.R.string
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
+
 
 class HomeActivity : AppCompatActivity(){
     private lateinit var binding: ActivityHomeBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -50,20 +59,38 @@ class HomeActivity : AppCompatActivity(){
         binding.contents.navBtn.setOnClickListener{
             drawerLayout.open()
         }
-        binding.contents.busSearchBtn.setOnClickListener{
-            startActivity(Intent(this, BusSearchActivity::class.java))
-        }
-        binding.contents.trackBtn.setOnClickListener{
-            startActivity(Intent(this, BusSearchActivity::class.java))
-        }
 
-        binding.myLocBtn.setOnClickListener{
+        binding.locBtn.setOnClickListener{
             startActivity(Intent(this@HomeActivity, MapsActivity::class.java))
             finish()
         }
+        binding.eTicketBtn.setOnClickListener{
+            startActivity(Intent(this@HomeActivity, BusSearchActivity::class.java))
+            finish()
+        }
+        binding.signoutBtn.setOnClickListener {
+            com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this@HomeActivity, SignInActivity::class.java))
+            finish()
+        }
+
 
         // to make the Navigation drawer icon always appear on the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val homeFragment = HomeFragment()
+        val eTicketingFragment = ETicketingFragment()
+        val trackingFragment = TrackingFragment()
+
+
+        //Fragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
+        navController = navHostFragment.navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bootomNavView)
+
+
+        setupWithNavController(bottomNavigationView, navController)
+
     }
 
 
@@ -90,3 +117,4 @@ class HomeActivity : AppCompatActivity(){
         win.attributes = winParams
     }
 }
+

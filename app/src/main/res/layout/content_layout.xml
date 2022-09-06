@@ -35,42 +35,36 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/activityContainer"
-        android:layout_width="match_parent"
+    <fragment
+        android:id="@+id/mainContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0sp"
         android:layout_height="0sp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bootomNavView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:navGraph="@navigation/nav_graph">
+
+    </fragment>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bootomNavView"
+        android:layout_width="0sp"
+        android:layout_height="70sp"
+        android:background="@color/purple_500"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        android:background="@drawable/uni_bg"
-        android:orientation="vertical">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:flow_horizontalBias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:paddingLeft="50sp"
+        android:paddingRight="50sp"
+        app:menu="@menu/bottom_nav_menu">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/busSearchBtn"
-            android:layout_width="200sp"
-            android:layout_height="50sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="150sp"
-            android:background="@drawable/round_shape"
-            android:backgroundTint="#9A62CC"
-            android:fontFamily="@font/coopbl"
-            android:text="Search"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:ignore="MissingConstraints" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trackBtn"
-            android:layout_width="200sp"
-            android:layout_height="50sp"
-            android:layout_marginTop="50sp"
-            android:layout_gravity="center"
-            android:background="@drawable/round_shape"
-            android:backgroundTint="#9A62CC"
-            android:fontFamily="@font/coopbl"
-            android:text="Track"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:ignore="MissingConstraints" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
