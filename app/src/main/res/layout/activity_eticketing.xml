@@ -4,97 +4,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/uni_bg"
     tools:context=".EticketingActivity">
 
-    <RelativeLayout
-        android:layout_width="380sp"
-        android:layout_height="200sp"
-        android:background="@drawable/ticket_back"
-        android:layout_marginTop="100sp"
-        android:layout_marginLeft="15sp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/uni_bg">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/textView3"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/busToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:background="@color/purple_500"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white">
+
+                <Button
+                    android:id="@+id/eBackBtn"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:layout_marginTop="50sp"
+                    android:background="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp"
+                    android:fontFamily="@font/lbritedi"
+                    android:padding="10sp"
+                    android:text="Stoppage"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="15sp"
-            android:layout_weight="1"
-            android:fontFamily="@font/coopbl"
-            android:text="Bijoy Express"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300sp"
-            android:layout_marginTop="15sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif"
-            android:textSize="20sp"
-            android:text="9 a.m" />
+            android:layout_marginTop="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/eBuyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="280sp"
-            android:layout_marginTop="125sp"
-            android:fontFamily="@font/coopbl"
-            android:textColor="@color/white"
-            android:background="@color/teal_700"
-            android:text="Buy Ticket" />
+            <RelativeLayout
 
-        <Button
-            android:id="@+id/eSeatButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150sp"
-            android:layout_marginTop="125sp"
-            android:fontFamily="@font/coopbl"
-            android:textColor="@color/white"
-            android:background="@color/teal_700"
-            android:text="Seats" />
+                android:id="@+id/layoutN"
+                android:layout_width="360sp"
+                android:layout_height="180sp"
+                android:layout_marginStart="8sp"
+                android:layout_marginTop="40sp"
+                android:background="@drawable/group1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/eLocaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="125sp"
-            android:fontFamily="@font/coopbl"
-            android:textColor="@color/white"
-            android:background="@color/teal_700"
-            android:text="Locations" />
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250sp"
-            android:layout_marginTop="65sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif"
-            android:textSize="18sp"
-            android:text="Price:" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/coopbl"
+                    android:textColor="@color/teal_700"
+                    android:text="Bijoy Express"
+                    android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300sp"
-            android:layout_marginTop="65sp"
-            android:layout_weight="1"
-            android:fontFamily="@font/coopbl"
-            android:text="65 TK"
-            android:textColor="#E30000"
-            android:textSize="24sp" />
+                <Button
+                    android:id="@+id/eBuyButton"
+                    android:layout_width="70sp"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="275sp"
+                    android:layout_marginTop="130sp"
+                    android:background="@color/teal_700"
+                    android:fontFamily="@font/coopbl"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
 
 
+                <Button
+                    android:id="@+id/eLocaButton"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:layout_marginLeft="150sp"
+                    android:layout_marginTop="130sp"
+                    android:background="@drawable/placeholder" />
 
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250sp"
+                    android:layout_marginTop="65sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="Price:"
+                    android:textSize="18sp" />
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250sp"
+                    android:layout_marginTop="30sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="E.Time:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300sp"
+                    android:layout_marginTop="30sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="9.00"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="60sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="(Ecb Chattor-Farmgate)"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="100sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="Bus Type: AC"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="80sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="Available seats:"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100sp"
+                    android:layout_marginTop="80sp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="05"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300sp"
+                    android:layout_marginTop="67sp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/coopbl"
+                    android:text="50 TK"
+                    android:textColor="#E30000"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.core.view.isEmpty
 import com.mgmtsapp.stoppage.databinding.ActivityBusSearchBinding
 import com.mgmtsapp.stoppage.databinding.ActivityHomeBinding
@@ -42,7 +39,19 @@ class BusSearchActivity : AppCompatActivity() {
             if (binding.editTextTime.text.isEmpty()) {
                 binding.editTextTime.setError("Empty field")
 
-            } else
+            } else if (binding.editTextTime.text.toString()
+                    .toInt() > 23 || binding.editTextTime.text.toString().toInt() < 0
+            ) {
+                binding.editTextTime.setError("Wrong input")
+            } else if (binding.editTextTimeM.text.isEmpty()) {
+                binding.editTextTimeM.setError("Empty field")
+            } else if (binding.editTextTimeM.text.toString()
+                    .toInt() > 59 || binding.editTextTimeM.text.toString().toInt() < 0
+            ) {
+                binding.editTextTimeM.setError("Wrong input")
+
+            }else
+
                 startActivity(Intent(this, EticketingActivity::class.java))
         }
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locations)
