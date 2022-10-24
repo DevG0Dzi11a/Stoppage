@@ -28,7 +28,6 @@ import com.mgmtsapp.stoppage.databinding.ActivityMapsBinding
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback , GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener{
     private lateinit var binding: ActivityMapsBinding
-
     private lateinit var mMap:GoogleMap
     private lateinit var mGoogleApiClient :GoogleApiClient
     private lateinit var mLastLocation : Location
@@ -52,6 +51,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback , GoogleApiClient.C
         if (Build.VERSION.SDK_INT >= 21) {
             setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             window.statusBarColor = Color.TRANSPARENT
+        }
+
+        binding.mapsBackBtn.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
         val mapFragment = supportFragmentManager

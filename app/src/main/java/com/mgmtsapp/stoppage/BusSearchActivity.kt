@@ -35,22 +35,36 @@ class BusSearchActivity : AppCompatActivity() {
         binding = ActivityBusSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //For full screen
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
+            window.statusBarColor = Color.TRANSPARENT
+        }
+
+
         binding.searchBtn.setOnClickListener {
             if (binding.editTextTime.text.isEmpty()) {
-                binding.editTextTime.setError("Empty field")
+                binding.editTextTime.error = "Empty field"
 
             } else if (binding.editTextTime.text.toString()
                     .toInt() > 23 || binding.editTextTime.text.toString().toInt() < 0
             ) {
-                binding.editTextTime.setError("Wrong input")
+                binding.editTextTime.error = "Wrong input"
             } else if (binding.editTextTimeM.text.isEmpty()) {
-                binding.editTextTimeM.setError("Empty field")
+                binding.editTextTimeM.error = "Empty field"
             } else if (binding.editTextTimeM.text.toString()
                     .toInt() > 59 || binding.editTextTimeM.text.toString().toInt() < 0
             ) {
-                binding.editTextTimeM.setError("Wrong input")
+                binding.editTextTimeM.error = "Wrong input"
 
-            }else
+            } else
 
                 startActivity(Intent(this, EticketingActivity::class.java))
         }
@@ -73,6 +87,9 @@ class BusSearchActivity : AppCompatActivity() {
 
 
         }
+        binding.busSearchBackBtn.setOnClickListener {
+            startActivity(Intent(this@BusSearchActivity, HomeActivity::class.java))
+        }
         binding.spinner1.adapter = arrayAdapter
         binding.spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -92,9 +109,21 @@ class BusSearchActivity : AppCompatActivity() {
         }
     }
 
+    private fun setWindowFlag(bits: Int, on: Boolean) {
+        //For full screen
+        val win = window
+        val winParams = win.attributes
+        if (on) {
+            winParams.flags = winParams.flags or bits
+        } else {
+            winParams.flags = winParams.flags and bits.inv()
+        }
+        win.attributes = winParams
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
-        finish();
+        finish()
     }
 
 

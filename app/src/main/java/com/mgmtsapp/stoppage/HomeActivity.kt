@@ -62,11 +62,9 @@ class HomeActivity : AppCompatActivity(){
 
         binding.locBtn.setOnClickListener{
             startActivity(Intent(this@HomeActivity, MapsActivity::class.java))
-            finish()
         }
         binding.eTicketBtn.setOnClickListener{
             startActivity(Intent(this@HomeActivity, BusSearchActivity::class.java))
-            finish()
         }
         binding.signoutBtn.setOnClickListener {
             com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
@@ -77,11 +75,6 @@ class HomeActivity : AppCompatActivity(){
 
         // to make the Navigation drawer icon always appear on the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val homeFragment = HomeFragment()
-        val eTicketingFragment = ETicketingFragment()
-        val trackingFragment = TrackingFragment()
-
 
         //Fragment
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
@@ -94,11 +87,6 @@ class HomeActivity : AppCompatActivity(){
     }
 
 
-    // override the onOptionsItemSelected()
-    // function to implement
-    // the item click listener callback
-    // to open and close the navigation
-    // drawer when the icon is clicked
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             true

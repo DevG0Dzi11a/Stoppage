@@ -8,5 +8,37 @@
     android:id="@+id/map"
     tools:context=".MapsActivity"
     android:name="com.google.android.gms.maps.SupportMapFragment">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/busToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:background="@color/purple_500"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextColor="@color/white">
+
+            <Button
+                android:id="@+id/maps_BackBtn"
+                android:layout_width="35sp"
+                android:layout_height="35sp"
+                android:layout_marginTop="50sp"
+                android:background="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40sp"
+                android:fontFamily="@font/lbritedi"
+                android:padding="10sp"
+                android:text="Stoppage"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
 </fragment>

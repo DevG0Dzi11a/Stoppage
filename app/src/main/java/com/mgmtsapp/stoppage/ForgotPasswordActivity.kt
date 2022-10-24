@@ -68,11 +68,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    binding.forPassEmail.setError("Invalid E-mail address")
+                    binding.forPassEmail.error = "Invalid E-mail address"
                     binding.forPassEmail.requestFocus()
                 }
             } else {
-                binding.forPassEmail.setError("E-mail is required")
+                binding.forPassEmail.error = "E-mail is required"
                 binding.forPassEmail.requestFocus()
             }
         }

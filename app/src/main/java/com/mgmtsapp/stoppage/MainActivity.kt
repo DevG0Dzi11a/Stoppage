@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             //if User is not logged in
             Handler().postDelayed({
-                val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                val intent = Intent(this@MainActivity, MapsActivity::class.java)
                 startActivity(intent)
                 finish()
             }, 1500)

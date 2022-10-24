@@ -7,11 +7,11 @@
         android:title="Home" />
     <item
         android:id="@+id/trackingFragment"
-        android:icon="@drawable/ic_loc"
-        android:title="Locate" />
+        android:icon="@drawable/ic_face"
+        android:title="Profile" />
     <item
         android:id="@+id/ETicketingFragment"
-        android:icon="@drawable/ic_ticket"
-        android:title="E-Ticketing" />
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications" />
 
 </menu>
